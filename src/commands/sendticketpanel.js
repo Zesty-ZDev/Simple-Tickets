@@ -35,7 +35,7 @@ module.exports = {
         .setCustomId('OpenTicketButton')
         .setLabel('Open Ticket')
         .setEmoji('✉️')
-        .setStyle('Primary'),
+        .setStyle('Secondary'),
       );
     //Do not remove credits!
     interaction.channel.send({
