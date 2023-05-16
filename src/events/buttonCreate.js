@@ -225,13 +225,33 @@ interaction.reply({embeds: [ticket], components: [ticketrow], ephemeral: true})
             if (interaction.isButton()){
                 if (interaction.customId == 'yesc') {
                     //setting varibles
-                    var disctag = interaction.user.tag
-                    var discname = disctag.slice(0, -5)
                     var chanuser = interaction.channel.topic
+                    var channame = interaction.channel.name
+                    var user = channame.slice(7)
+                    var categoryid = interaction.channel.parentId
+                    var everyone = interaction.guild.id
+ 
+                    if (categoryid == config.SelectMenu1Category){global.DataRole = config.SelectMenu1Role}
+                    if (categoryid == config.SelectMenu2Category){global.DataRole = config.SelectMenu2Role}
+                    if (categoryid == config.SelectMenu3Category){global.DataRole = config.SelectMenu3Role}
+                    if (categoryid == config.SelectMenu4Category){global.DataRole = config.SelectMenu4Role}
+                    if (categoryid == config.SelectMenu5Category){global.DataRole = config.SelectMenu5Role}
+                    if (categoryid == config.TicketCategory){global.DataRole = config.StaffRole} // "simple config" only
                     
                     //removing user access fron ticket
-                    interaction.channel.permissionOverwrites.edit(chanuser, { ViewChannel: false })
-                    .catch (() => interaction.channel.send({content: `*The ticket user could not have channel access revoked this is likely due to the user either no longer being in the discord or the users role being above the ticket users*`}))
+                    interaction.channel.permissionOverwrites.set([
+                      {
+                        id: everyone,
+                        deny: [PermissionsBitField.Flags.ViewChannel],
+                      },
+                      {
+                        id: DataRole,
+                        allow: [PermissionsBitField.Flags.ViewChannel],
+                      },
+                      ])   
+                      .catch (() => interaction.channel.send({content: `*The ticket users could not have channel access revoked this is likely due to staff role being above the ticket bot*`}))
+
+
 
                     sqlcheck = (`DELETE FROM Tickets WHERE DiscordID = (?);`)
                     db.all(sqlcheck, [`${chanuser}`], async (err, row) => {
@@ -243,7 +263,7 @@ if (config.ReviewEnabled == true){
 //Rating Embed AN
 const NotifyUser = new EmbedBuilder()
 .setTitle(`${client.user.username}`)
-.setDescription(`**${discname}**\n\n Would you like to leave a review on your experience with our staff here at ${config.ServerName}\n\n*Note this review is not anonymous*`)
+.setDescription(`**${user}**\n\n Would you like to leave a review on your experience with our staff here at ${config.ServerName}\n\n*Note this review is not anonymous*`)
 .setColor(config.color)
 .setThumbnail(config.thumbnail)
 .setFooter({
@@ -307,16 +327,17 @@ const NotifyActionRow = new ActionRowBuilder()
 //Del ticket button handler
                     if (interaction.isButton()){
                         if (interaction.customId == 'delt') {
+                          
                             const channel = interaction.channel;
                             var chanuser = interaction.channel.topic
                             var channame = interaction.channel.name
-                            var user = channame.slice(6, 0)
 
                             const embed = new EmbedBuilder()
             .setTitle(`${client.user.username}`)
-            .setDescription(`Ticket transcript for ${user} - <@${chanuser}>`)
+            .setDescription(`Ticket transcript for - <@${chanuser}>`)
             .setColor(config.color)
             .setThumbnail(config.thumbnail) 
+            .setTimestamp()
             .setFooter({
                 text: `${client.user.username}`,
                 iconURL: `https://cdn.discordapp.com/avatars/${client.user.id}/${client.user.avatar}.webp`

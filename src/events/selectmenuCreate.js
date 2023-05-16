@@ -20,12 +20,11 @@ let sql;
 
   if (interaction.isStringSelectMenu()){
     if (interaction.customId == 'selectcategory') {
-      console.log("Test Point A")
-if(interaction.values == 'rowsel1'){global.Data1 = config.SelectMenu1Label, global.Data2 = config.SelectMenu1Category, global.Data3 = config.SelectMenu1Role, console.log("Ticket 1")}
-if(interaction.values == 'rowsel2'){global.Data1 = config.SelectMenu2Label, global.Data2 = config.SelectMenu2Category, global.Data3 = config.SelectMenu2Role, console.log("Ticket 2")}
-if(interaction.values == 'rowsel3'){global.Data1 = config.SelectMenu3Label, global.Data2 = config.SelectMenu3Category, global.Data3 = config.SelectMenu3Role, console.log("Ticket 3")}
-if(interaction.values == 'rowsel4'){global.Data1 = config.SelectMenu4Label, global.Data2 = config.SelectMenu4Category, global.Data3 = config.SelectMenu4Role, console.log("Ticket 4")}
-if(interaction.values == 'rowsel5'){global.Data1 = config.SelectMenu5Label, global.Data2 = config.SelectMenu5Category, global.Data3 = config.SelectMenu5Role, console.log("Ticket 5")}
+if(interaction.values == 'rowsel1'){global.Data1 = config.SelectMenu1Label, global.Data2 = config.SelectMenu1Category, global.Data3 = config.SelectMenu1Role}
+if(interaction.values == 'rowsel2'){global.Data1 = config.SelectMenu2Label, global.Data2 = config.SelectMenu2Category, global.Data3 = config.SelectMenu2Role}
+if(interaction.values == 'rowsel3'){global.Data1 = config.SelectMenu3Label, global.Data2 = config.SelectMenu3Category, global.Data3 = config.SelectMenu3Role}
+if(interaction.values == 'rowsel4'){global.Data1 = config.SelectMenu4Label, global.Data2 = config.SelectMenu4Category, global.Data3 = config.SelectMenu4Role}
+if(interaction.values == 'rowsel5'){global.Data1 = config.SelectMenu5Label, global.Data2 = config.SelectMenu5Category, global.Data3 = config.SelectMenu5Role}
         const embed1 = new EmbedBuilder()
         .setTitle(`${client.user.username}`)
         .setDescription(`**Open Ticket**\n\n You have selected ${Data1} as the category of this ticket! \n\nPlease wait patiently and a member of The staff team will be here to help shortly`)
@@ -41,7 +40,7 @@ if(interaction.values == 'rowsel5'){global.Data1 = config.SelectMenu5Label, glob
             new ButtonBuilder()
             .setCustomId('close1')
             .setLabel('Close Ticket')
-            .setStyle('Secondary')
+            .setStyle('Secondary'),
         );
         //setting varibles
         var disctag = interaction.user.tag
@@ -54,6 +53,7 @@ if(interaction.values == 'rowsel5'){global.Data1 = config.SelectMenu5Label, glob
           type: ChannelType.GuildText,
           parent: Data2,
           permissionOverwrites: [
+            
             {
               id: interaction.user.id,
               allow: [PermissionsBitField.Flags.ViewChannel, PermissionsBitField.Flags.SendMessages, PermissionsBitField.Flags.AttachFiles, PermissionsBitField.Flags.ReadMessageHistory]

@@ -27,7 +27,7 @@ let sql;
       .setDescription("Blacklist a user from the ticket system ")
       .setDMPermission(false)
       .setDefaultMemberPermissions(PermissionFlagsBits.ManageGuild)
-      .addUserOption(option => option.setName('target').setDescription('The user')),
+      .addUserOption(option => option.setName('target').setDescription('The user').setRequired(true)),
     run: async (client, interaction) => {
 
         const target = interaction.options.getMember('target');

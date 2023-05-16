@@ -8,6 +8,13 @@ Join [Here](https://discord.gg/EV9cpmp6qf) for support
 
 
 ## FAQ
+#### How do I add another user to a ticket?
+
+Adding another user to a ticket is as simple as /adduser then the select the user from the list note that only the user that opened the ticket and staff with the role assigned to manage that ticket category can add other users
+
+#### Why can't one of my members cannot open a ticker?
+
+If a user is informed they currently have another ticket open they likely already had a ticket open prior and ticket was closed improperly either using discord by deleting the channel or using another bot however if the ticket bot does not close the ticket itself the user will remain in the selfbuilt database of open ticket holders to rectify this issue run the /resetuser command followed by the users name this will clear the user from the database 
 
 #### What is the "simple config" option listed in the config?
 
