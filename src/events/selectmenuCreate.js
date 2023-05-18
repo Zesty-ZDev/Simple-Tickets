@@ -27,7 +27,7 @@ if(interaction.values == 'rowsel4'){global.Data1 = config.SelectMenu4Label, glob
 if(interaction.values == 'rowsel5'){global.Data1 = config.SelectMenu5Label, global.Data2 = config.SelectMenu5Category, global.Data3 = config.SelectMenu5Role}
         const embed1 = new EmbedBuilder()
         .setTitle(`${client.user.username}`)
-        .setDescription(`**Open Ticket**\n\n You have selected ${Data1} as the category of this ticket! \n\nPlease wait patiently and a member of The staff team will be here to help shortly`)
+        .setDescription(`**Open Ticket**\n\n You have selected ${Data1} as the category of this ticket! \n\nPlease verify your Tebex transaction ID so we can provide support quicker and easier or wait patiently and a member of The staff team will be here to help shortly`)
         .setColor(config.color)
         .setThumbnail(config.thumbnail)
         .setFooter({
@@ -36,6 +36,12 @@ if(interaction.values == 'rowsel5'){global.Data1 = config.SelectMenu5Label, glob
         });
         //Button
         const close1 = new ActionRowBuilder()
+        .addComponents(
+          new ButtonBuilder()
+          .setCustomId('verifyticket')
+          .setLabel('Verify Transaction')
+          .setStyle('Secondary'),
+      )
         .addComponents(
             new ButtonBuilder()
             .setCustomId('close1')

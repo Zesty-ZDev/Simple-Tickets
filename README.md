@@ -8,6 +8,10 @@ Join [Here](https://discord.gg/EV9cpmp6qf) for support
 
 
 ## FAQ
+#### What is the tebexApi?
+
+The Tebex api is the key we will use to request the transaction status of the transaction ID supplied, to get this secret key click [here](https://server.tebex.io/game-servers/create) or login to your control panel, click "Game Servers" on the left hand navigation menu, click the server you want to find the secret key for, click "Show" on the Secret Key.. Note no payment details of users can be passed through the tebex api you can find more details on the tebex api [here](https://docs.tebex.io/plugin/)
+
 #### How do I add another user to a ticket?
 
 Adding another user to a ticket is as simple as /adduser then the select the user from the list note that only the user that opened the ticket and staff with the role assigned to manage that ticket category can add other users

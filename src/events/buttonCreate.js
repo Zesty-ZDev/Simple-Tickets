@@ -32,7 +32,7 @@ module.exports = {
        //Embed
         const embed1 = new EmbedBuilder()
         .setTitle(`${client.user.username}`)
-        .setDescription(`**Open Ticket**\n\nPlease wait patiently and a member of The staff team will be here to help shortly`)
+        .setDescription(`**Open Ticket**\n\nPlease verify you Tebex transaction ID so we can provide support quicker and easier or wait patiently and a member of The staff team will be here to help shortly`)
         .setColor(config.color)
         .setThumbnail(config.thumbnail)
         .setFooter({
@@ -41,6 +41,12 @@ module.exports = {
         });
         //Button
         const close1 = new ActionRowBuilder()
+        .addComponents(
+          new ButtonBuilder()
+          .setCustomId('verifyticket')
+          .setLabel('Verify Transaction')
+          .setStyle('Secondary'),
+      )
         .addComponents(
             new ButtonBuilder()
             .setCustomId('close1')

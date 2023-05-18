@@ -1,6 +1,8 @@
 module.exports = {
     "token": "",//Required Bot Token found on discord dev portal
 
+    "tebexApi":"",
+
     "ServerName": "", //Required
     "thumbnail": "https://",//Required IMG link
     "color": "#//",//Required HEX
