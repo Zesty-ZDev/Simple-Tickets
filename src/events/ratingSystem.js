@@ -125,7 +125,16 @@ if (interaction.values == "rate2") {
    text: `${client.user.username}`,
    iconURL: `https://cdn.discordapp.com/avatars/${client.user.id}/${client.user.avatar}.webp`
  });
-    interaction.update({embeds:[],components: [], content: `Review submited thanks for choosing to leave a review`})
+ const NotifyUser2 = new EmbedBuilder()
+ .setTitle(`${client.user.username}`)
+ .setDescription(`**Tickets**\n\nThank your for opening a ticket with ${config.ServerName} - Review submitted\n Thank you for choosing to leave a review\n\n*Note this is not anonymous*`)
+ .setColor(config.color)
+ .setThumbnail(config.thumbnail)
+ .setFooter({
+    text: `${client.user.username}`,
+    iconURL: `https://cdn.discordapp.com/avatars/${client.user.id}/${client.user.avatar}.webp`})
+
+    interaction.update({embeds:[NotifyUser2],components: []})
     client.channels.cache.get(config.ReviewChannel).send({
         embeds: [NotifyUser],
   
@@ -148,7 +157,16 @@ if (interaction.values == "rate3") {
    text: `${client.user.username}`,
    iconURL: `https://cdn.discordapp.com/avatars/${client.user.id}/${client.user.avatar}.webp`
  });
-    interaction.update({embeds:[],components: [], content: `Review submited thanks for choosing to leave a review`})
+ const NotifyUser2 = new EmbedBuilder()
+ .setTitle(`${client.user.username}`)
+ .setDescription(`**Tickets**\n\nThank your for opening a ticket with ${config.ServerName} - Review submitted\n Thank you for choosing to leave a review\n\n*Note this is not anonymous*`)
+ .setColor(config.color)
+ .setThumbnail(config.thumbnail)
+ .setFooter({
+    text: `${client.user.username}`,
+    iconURL: `https://cdn.discordapp.com/avatars/${client.user.id}/${client.user.avatar}.webp`})
+
+    interaction.update({embeds:[NotifyUser2],components: []})
     client.channels.cache.get(config.ReviewChannel).send({
         embeds: [NotifyUser],
   
@@ -171,7 +189,16 @@ if (interaction.values == "rate4") {
    text: `${client.user.username}`,
    iconURL: `https://cdn.discordapp.com/avatars/${client.user.id}/${client.user.avatar}.webp`
  });
-    interaction.update({embeds:[],components: [], content: `Review submited thanks for choosing to leave a review`})
+ const NotifyUser2 = new EmbedBuilder()
+ .setTitle(`${client.user.username}`)
+ .setDescription(`**Tickets**\n\nThank your for opening a ticket with ${config.ServerName} - Review submitted\n Thank you for choosing to leave a review\n\n*Note this is not anonymous*`)
+ .setColor(config.color)
+ .setThumbnail(config.thumbnail)
+ .setFooter({
+    text: `${client.user.username}`,
+    iconURL: `https://cdn.discordapp.com/avatars/${client.user.id}/${client.user.avatar}.webp`})
+
+    interaction.update({embeds:[NotifyUser2],components: []})
     client.channels.cache.get(config.ReviewChannel).send({
         embeds: [NotifyUser],
   
@@ -194,8 +221,17 @@ if (interaction.values == "rate5") {
    text: `${client.user.username}`,
    iconURL: `https://cdn.discordapp.com/avatars/${client.user.id}/${client.user.avatar}.webp`
  });
-    interaction.update({embeds:[],components: [], content: `Review submited thanks for choosing to leave a review`})
-    client.channels.cache.get(config.ReviewChannel).send({
+ const NotifyUser2 = new EmbedBuilder()
+ .setTitle(`${client.user.username}`)
+ .setDescription(`**Tickets**\n\nThank your for opening a ticket with ${config.ServerName} - Review submitted\n Thank you for choosing to leave a review\n\n*Note this is not anonymous*`)
+ .setColor(config.color)
+ .setThumbnail(config.thumbnail)
+ .setFooter({
+    text: `${client.user.username}`,
+    iconURL: `https://cdn.discordapp.com/avatars/${client.user.id}/${client.user.avatar}.webp`})
+
+    interaction.update({embeds:[NotifyUser2],components: []})
+        client.channels.cache.get(config.ReviewChannel).send({
         embeds: [NotifyUser],
   
       });
