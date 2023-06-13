@@ -43,9 +43,8 @@ if(interaction.values == 'rowsel5'){global.Data1 = config.SelectMenu5Label, glob
             .setStyle('Secondary'),
         );
         //setting varibles
-        var disctag = interaction.user.tag
         var discid = interaction.user.id
-        var discname = disctag.slice(0, -5)
+        var discname = interaction.user.username
         
       var createdChannel = await interaction.guild.channels.create({
           name: `Ticket ${discname}`,
