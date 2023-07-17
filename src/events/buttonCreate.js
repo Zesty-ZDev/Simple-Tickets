@@ -49,7 +49,7 @@ module.exports = {
         );
         //setting varibles
         var discid = interaction.user.id
-        var discname = interaction.username
+        var discname = interaction.user.username
         
       var createdChannel = await interaction.guild.channels.create({
           name: `Ticket ${discname}`,
