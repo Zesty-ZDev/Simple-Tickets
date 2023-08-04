@@ -1,6 +1,6 @@
 
 
-# Simple Tickets by Zdev
+# Simple Tickets by Z-Dev
 Simple Tickets featuring a simple setup using a self building database and simple config allowing for easy ticket opening all the way to select menus with advanced modal questionnaires with html transcripts and client reviews, the system itself will be modular and intuitive with the setup so even a basic user can have an advanced ticketing system simply
 
 ### Z-Dev Discord
