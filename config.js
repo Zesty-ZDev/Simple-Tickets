@@ -9,10 +9,15 @@ module.exports = {
 
     //Set both of the below options to "True" to set the bot to a "simple config" this will simply just be click & open
     //If wish to have Select menus with set "NoSelectMenu" to "false"
-    "NoSelectMenu": false,
+    "SimpleConfig": false,
 
     "StaffRole": "", //this is only used if the ticket system is in a "simple config" this will determine the role that can view all tickets created , Not required if "NoSelectMenu" is set to "false"
     "TicketCategory":"", //this is only used if the ticket system is in a "simple config" this will determine the category / parent the newly opened tickets will be created under , Not required if "NoSelectMenu" is set to "false"
+
+
+  /////////////////////////////////////// Select Menu Below ///////////////////////////////////////
+  /////////////////// Number between 1 & 5 Leaving the number as an integer-(Do Not Use Quotes)
+  "SelectMenuCount": 5, // This will determine how many select menu options will be displayed | The script will use the menu options from 1 - 5 so for examply if you select only 4 options it will only use options 1-4 this means you can leave 5 blank however you must fill options 1-4
 
 /////////////////////////////////////// Select Menu Below ///////////////////////////////////////
 

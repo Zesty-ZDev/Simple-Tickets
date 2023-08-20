@@ -25,7 +25,7 @@ module.exports = {
             let stringcut = string.slice(-3, -2)
             if(stringcut == `1`){interaction.reply({content: 'You already have an open ticket!', ephemeral: true})}
             else{
-              if(config.NoSelectMenu == true){
+              if(config.SimpleConfig == true){
                 
 
 
@@ -120,49 +120,58 @@ module.exports = {
     iconURL: `https://cdn.discordapp.com/avatars/${client.user.id}/${client.user.avatar}.webp`
   });
  //TICKET ROW
- const ticketrow = new ActionRowBuilder()
- .addComponents(
-    new StringSelectMenuBuilder()
+
+ const StringMenu = new StringSelectMenuBuilder()
         .setCustomId('selectcategory')
         .setPlaceholder('Select a ticket category')
-        .addOptions(
-            //Row One
-            {
-                label: config.SelectMenu1Label,
-                description: config.SelectMenu1Description,
-                value: 'rowsel1',
-            },
-            //Row One
-            //Row Two
-            {
-                label: config.SelectMenu2Label,
-                description: config.SelectMenu2Description,
-                value: 'rowsel2',
-            },
-            //Row Two
-            //Row Three
-            {
-                label: config.SelectMenu3Label,
-                description: config.SelectMenu3Description,
-                value: 'rowsel3',
-            },
-            //Row Three
-            //Row Four
-            {
-                label: config.SelectMenu4Label,
-                description: config.SelectMenu4Description,
-                value: 'rowsel4',
-            },
-            //Row Four
-            //Row Five
-            {
-                label: config.SelectMenu5Label,
-                description: config.SelectMenu5Description,
-                value: 'rowsel5',
-            },
-            //Row Five
-        ),
-)
+
+ 
+
+
+if(config.SelectMenuCount >= 1){
+  StringSelectMenuTickets.addOptions(
+  {
+    label: config.SelectMenu1Label,
+    description: config.SelectMenu1Description,
+    value: 'rowsel1',
+  })}
+//2
+  if(config.SelectMenuCount >= 2){
+    StringSelectMenuTickets.addOptions(
+  {
+    label: config.SelectMenu2Label,
+    description: config.SelectMenu2Description,
+    value: 'rowsel2',
+  })}
+  //3
+  if(config.SelectMenuCount >= 3){
+    StringSelectMenuTickets.addOptions(
+  {
+    label: config.SelectMenu3Label,
+    description: config.SelectMenu3Description,
+    value: 'rowsel3',
+  })}
+  //4
+  if(config.SelectMenuCount >= 4){
+    StringSelectMenuTickets.addOptions({
+    label: config.SelectMenu4Label,
+    description: config.SelectMenu4Description,
+    value: 'rowsel4',
+  })}
+  //5
+  if(config.SelectMenuCount >= 5){
+    StringSelectMenuTickets.addOptions({
+    label: config.SelectMenu5Label,
+    description: config.SelectMenu5Description,
+    value: 'rowsel5',
+  })}    
+  
+  
+  const ticketrow = new ActionRowBuilder()
+  .addComponents(
+StringMenu
+ )
+
 interaction.reply({embeds: [ticket], components: [ticketrow], ephemeral: true})
     }
   }
