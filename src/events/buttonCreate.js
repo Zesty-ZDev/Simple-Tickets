@@ -121,7 +121,7 @@ module.exports = {
   });
  //TICKET ROW
 
- const StringMenu = new StringSelectMenuBuilder()
+ const StringSelectMenuTickets = new StringSelectMenuBuilder()
         .setCustomId('selectcategory')
         .setPlaceholder('Select a ticket category')
 
