@@ -169,7 +169,7 @@ if(config.SelectMenuCount >= 1){
   
   const ticketrow = new ActionRowBuilder()
   .addComponents(
-StringMenu
+StringSelectMenuTickets
  )
 
 interaction.reply({embeds: [ticket], components: [ticketrow], ephemeral: true})
